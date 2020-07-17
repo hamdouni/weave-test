@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  hostB:
+    container_name: hostB 
+    image: weaveworks/ubuntu
+    network_mode: "bridge"
+    command: ping hostA
+networks:
+  default:
+    external: 
+      name: weave

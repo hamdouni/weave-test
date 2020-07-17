@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  hostA:
+    container_name: hostA
+    image: weaveworks/ubuntu
+    network_mode: "bridge"
+    command: nc -l -k -p 4422 
+    ports:
+      - "4422"
+networks:
+  default:
+    external:
+      name: weave
